@@ -11,9 +11,7 @@ const printNameAndAge = (name, age) => {
     console.log("My name is: " +  name + " and I'm " + age);
 };
 
-
-
-// printMyName('Jose');
-// printNameAndAge('Jose', 25);
-// console.log(twiceNumber(5));
+printMyName('Jose');
+printNameAndAge('Jose', 25);
+console.log(twiceNumber(5));
 
