@@ -1,5 +1,5 @@
-import React from 'react'
-import { prototype } from 'module';
+import React from 'react';
+import './Person.css';
 
 //A component is just function which return a jsx
 //Function name lowercase
@@ -19,9 +19,10 @@ import { prototype } from 'module';
 //The children propertie is use to go inside the component you want to render.
 const person = (props) => {
     return (
-        <div>
-            <p>I'm  {props.name} and I have {props.age}</p>
+        <div className='Person'>
+            <p onClick={props.click}>I'm  {props.name} and I have {props.age}</p>
             <p>{props.children}</p>
+            <input type='text' onChange={props.changed} value={props.name} />
         </div>
     )
 };
