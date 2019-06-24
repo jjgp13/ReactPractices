@@ -1,6 +1,7 @@
 import React from 'react';
 import './Person.css';
 
+
 //A component is just function which return a jsx
 //Function name lowercase
 
@@ -18,6 +19,7 @@ import './Person.css';
 
 //The children propertie is use to go inside the component you want to render.
 const person = (props) => {
+
     return (
         <div className='Person'>
             <p onClick={props.click}>I'm  {props.name} and I have {props.age}</p>

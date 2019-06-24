@@ -67,11 +67,13 @@ class App extends Component {
 
   render() {
     const style = {
-      backgroundColor: 'white',
+      backgroundColor: 'green',
+      color : 'white',
       font: 'inherit',
       border: '1x solid blue',
       padding: '8px',
-      cursor: 'pointer'
+      cursor: 'pointer',
+      
     };
 
     let persons = null;
@@ -89,17 +91,30 @@ class App extends Component {
             })}
           </div>
       );
+      //Changing styles dinamically
+      style.backgroundColor = 'red';
+      style[':hover'] = {
+        backgroundColor: 'salmon',
+        color: 'black'
+      }
+    }
+
+    let classes = [];
+    if(this.state.persons.length <= 2){
+      classes.push('red'); //Clasess = 'red'
+    }
+    if(this.state.persons.length <= 1){
+      classes.push('bold'); //classes ['red', 'bold']
     }
 
     //jsx - > Write html code in js files.
     //Some restriction like className instead of class, given that class is js reserved word.
     //JSC expression can olny have one root element
     return (
-      //Use a component inside
-      //Ternary operator 
+      
       <div className="App">
         <h1>Hi, I'm a new react developer</h1>
-        <p>This is working</p>
+        <p className={classes.join(' ')}>This is working</p>
         
         <button 
           onClick={this.tooglePersonsHandler}
@@ -109,6 +124,7 @@ class App extends Component {
         
         {persons}
       </div>
+      
       //this not
       //<p>This is working</p>
     );
